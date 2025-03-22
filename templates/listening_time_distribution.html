@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <title>Listening Time Distribution</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <h1>Listening Time Distribution by Time Period</h1>
+  <table border="1">
+    <tr>
+      <th>Time Period</th>
+      <th>Total Minutes Played</th>
+    </tr>
+    {% for period, minutes in time_distribution %}  <!-- ✅ FIXED -->
+    <tr>
+      <td>{{ period }}</td>
+      <td>{{ minutes }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <a href="{{ url_for('insights') }}">Back to Insights</a>
+</body>
+</html>

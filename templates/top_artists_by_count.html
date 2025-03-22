@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <title>Top Artists by Count</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <h1>Top Artists by Play Count</h1>
+  <table border="1">
+    <tr>
+      <th>Artist Name</th>
+      <th>Play Count</th>
+    </tr>
+    {% for artist, count in top_artists %}
+    <tr>
+      <td>{{ artist }}</td>
+      <td>{{ count }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <a href="{{ url_for('insights') }}">Back to Insights</a>
+</body>
+</html>

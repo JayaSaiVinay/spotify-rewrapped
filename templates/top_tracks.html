@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+  <title>Top Tracks</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <h1>Top Tracks</h1>
+  <table border="1">
+    <tr>
+      <th>Track Name</th>
+      <th>Artist Name</th>
+      <th>Total Minutes Played</th>
+    </tr>
+    {% for track, artist, minutes in top_tracks %}
+    <tr>
+      <td>{{ track }}</td>
+      <td>{{ artist }}</td>
+      <td>{{ minutes }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <a href="{{ url_for('insights') }}">Back to Insights</a>
+</body>
+</html>

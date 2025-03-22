@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <title>Top Listening Months</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <h1>Top Listening Months</h1>
+  <table border="1">
+    <tr>
+      <th>Month</th>
+      <th>Total Minutes Played</th>
+    </tr>
+    {% for month, minutes in months %}
+    <tr>
+      <td>{{ month }}</td>
+      <td>{{ minutes }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <a href="{{ url_for('insights') }}">Back to Insights</a>
+</body>
+</html>

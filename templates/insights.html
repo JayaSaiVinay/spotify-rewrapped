@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+  <title>Select Insight</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <h1>Select an Insight to View</h1>
+  <ul>
+    <li><a href="{{ url_for('top_tracks') }}">Top Tracks</a></li>
+    <li><a href="{{ url_for('top_tracks_removing_night') }}">Top Tracks (Removing Night Listening)</a></li>
+    <li><a href="/top_tracks_by_count">Top Tracks by Play Count</a></li>
+    <li><a href="{{ url_for('top_artists_by_count') }}">Top Artists by Play Count</a></li>
+    <li><a href="{{ url_for('top_artists_by_time') }}">Top Artists by Listening Time</a></li>
+    <li><a href="{{ url_for('top_months') }}">Top Listening Months</a></li>
+    <li><a href="{{ url_for('listening_time_distribution') }}">Listening Time Distribution</a></li>
+  </ul>
+  <a href="{{ url_for('upload_file') }}">Upload another file</a>
+</body>
+</html>
